@@ -9,3 +9,46 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## 1. confidence intervals
+
+t dist for greater uncertanty
+
+```{r}
+otter_length <- c(38,41,50, 27, 32, 41, 48, 60, 43)
+t.test(otter_length)
+
+
+
+```
+this null is bogus: testing that mean otter length is zero, which makes no sense
+
+
+## 2. T-test (1 sample t-test)
+
+use `?t.test` for info (in console)
+
+see claim: mean otter lengthis 50 inches
+
+```{r}
+otter_test <- t.test(x = otter_length, mu = 50) # reset the mean of 50 instead of null = 0
+otter_test #call it to view
+
+
+```
+
+## 3. 2-sample T-test
+are my differences in two sample means so different that i think they are drawn from populations with different means?
+
+
+```{r}
+desert_bighorn <- c(32, 44, 18, 26, 50, 33, 42, 40)
+sierra_bighorn <- c(28, 31, 40, 42, 26, 29, 31)
+
+t.test(x = desert_bighorn, y = sierra_bighorn)
+
+```
+
+
+
+
+
